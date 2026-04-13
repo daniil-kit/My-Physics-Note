@@ -1,7 +1,4 @@
-import os
-
-# Содержимое для Markdown файла
-md_content = """# Essay: Electric Vehicles and the Environment
+# Essay: Electric Vehicles and the Environment
 
 **Topic:** Electric cars are the way forward to a cleaner world. Do you agree?
 
@@ -47,9 +44,3 @@ In conclusion, electric cars are a vital tool for a cleaner world. They solve th
 * Summary of emissions and technology benefits.
 * Reiteration that electric cars are a vital tool.
 * Final thought on protecting nature for the future.
-"""
-
-# Сохранение файла
-file_path = "essay_electric_cars_github.md"
-with open(file_path, "w", encoding="utf-8") as f:
-    f.write(md_content)

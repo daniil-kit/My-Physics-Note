@@ -1,1 +1,151 @@
--
+# Код для создания PDF-файла с эссе и планом
+from weasyprint import HTML
+import os
+
+html_content = """
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @page {
+            size: A4;
+            margin: 25mm 20mm;
+            background-color: #ffffff;
+        }
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #444;
+            padding-bottom: 10px;
+        }
+        h1 {
+            font-size: 20pt;
+            margin: 0;
+            color: #000;
+        }
+        h2 {
+            font-size: 16pt;
+            margin-top: 30px;
+            color: #2c3e50;
+            border-left: 5px solid #2c3e50;
+            padding-left: 10px;
+        }
+        .essay-body {
+            text-align: justify;
+            font-size: 12pt;
+        }
+        .essay-body p {
+            margin-bottom: 15px;
+            text-indent: 1.25cm;
+        }
+        .plan-section {
+            margin-top: 40px;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .plan-section h3 {
+            margin-top: 0;
+            font-size: 14pt;
+        }
+        ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .footer {
+            margin-top: 50px;
+            font-size: 10pt;
+            text-align: right;
+            color: #777;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Essay Assignment</h1>
+        <p><strong>Topic:</strong> Electric cars are the way forward to a cleaner world. Do you agree?</p>
+    </div>
+
+    <div class="essay-body">
+        <h2>Essay</h2>
+        <p>
+            Over 90% of cars in the world today have internal combustion engines. These machines create many harmful emissions that damage our global atmosphere. Older vehicles are a big problem because they produce even more pollution. Many people think that electric cars are the best way forward. I agree that electric vehicles are the future for a cleaner world.
+        </p>
+        <p>
+            Driving an electric car is often cheaper because electricity costs less than gasoline. However, power plants use a lot of energy to produce this electricity. In many regions, this energy still comes from burning traditional fuels. Therefore, electric cars save money, but we need cleaner energy sources.
+        </p>
+        <p>
+            Manufacturing electric vehicles requires more energy than building regular cars. The production of large batteries involves mining and high-heat industrial processes. Once the car is ready, it has zero emissions on the road. In the end, the clean air in cities justifies the high production costs.
+        </p>
+        <p>
+            The world is running out of oil because of millions of traditional engines. Electric cars help solve this, but they need special metals like lithium for batteries. Mining these metals also has an impact on our natural environment. Thus, we must use resources wisely and recycle batteries in the future.
+        </p>
+        <p>
+            In conclusion, electric cars are a vital tool for a cleaner world. They solve the problem of high emissions from millions of old gasoline machines. Even though production is hard, the environmental benefits are very significant. We should support this technology to protect our nature for everyone.
+        </p>
+    </div>
+
+    <div class="plan-section">
+        <h2>Essay Plan</h2>
+        
+        <h3>1. Introduction</h3>
+        <ul>
+            <li>Dominance of internal combustion engines (over 90% of cars).</li>
+            <li>Problem of high emissions from old vehicles.</li>
+            <li>Thesis: Electric cars are the future for a cleaner world.</li>
+        </ul>
+
+        <h3>2. Economic and Energy Factor</h3>
+        <ul>
+            <li>Fact 1: Electricity is cheaper than gasoline.</li>
+            <li>Fact 2: High energy cost of electricity production.</li>
+            <li>Conclusion: Need for cleaner energy sources.</li>
+        </ul>
+
+        <h3>3. Manufacturing Impact</h3>
+        <ul>
+            <li>Fact 1: High energy consumption during battery production.</li>
+            <li>Fact 2: Zero emissions while driving.</li>
+            <li>Conclusion: Urban air quality justifies production costs.</li>
+        </ul>
+
+        <h3>4. Natural Resources</h3>
+        <ul>
+            <li>Fact 1: Depletion of oil reserves.</li>
+            <li>Fact 2: Need for lithium and other metals.</li>
+            <li>Conclusion: Importance of recycling and wise resource use.</li>
+        </ul>
+
+        <h3>5. Conclusion</h3>
+        <ul>
+            <li>Summary of emissions and technology benefits.</li>
+            <li>Reiteration of electric cars as a vital tool.</li>
+            <li>Final thought on environmental protection.</li>
+        </ul>
+    </div>
+
+    <div class="footer">
+        Submitted as part of the English language curriculum.
+    </div>
+</body>
+</html>
+"""
+
+output_pdf = "academic_essay_electric_cars.pdf"
+with open("temp.html", "w", encoding="utf-8") as f:
+    f.write(html_content)
+
+HTML(filename="temp.html").write_pdf(output_pdf)
+os.remove("temp.html")

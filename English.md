@@ -1,0 +1,55 @@
+import os
+
+# Содержимое для Markdown файла
+md_content = """# Essay: Electric Vehicles and the Environment
+
+**Topic:** Electric cars are the way forward to a cleaner world. Do you agree?
+
+---
+
+## Essay
+
+Over 90% of cars in the world today have internal combustion engines. These machines create many harmful emissions that damage our global atmosphere. Older vehicles are a big problem because they produce even more pollution. Many people think that electric cars are the best way forward. I agree that electric vehicles are the future for a cleaner world.
+
+Driving an electric car is often cheaper because electricity costs less than gasoline. However, power plants use a lot of energy to produce this electricity. In many regions, this energy still comes from burning traditional fuels. Therefore, electric cars save money, but we need cleaner energy sources.
+
+Manufacturing electric vehicles requires more energy than building regular cars. The production of large batteries involves mining and high-heat industrial processes. Once the car is ready, it has zero emissions on the road. In the end, the clean air in cities justifies the high production costs.
+
+The world is running out of oil because of millions of traditional engines. Electric cars help solve this, but they need special metals like lithium for batteries. Mining these metals also has an impact on our natural environment. Thus, we must use resources wisely and recycle batteries in the future.
+
+In conclusion, electric cars are a vital tool for a cleaner world. They solve the problem of high emissions from millions of old gasoline machines. Even though production is hard, the environmental benefits are very significant. We should support this technology to protect our nature for everyone.
+
+---
+
+## Essay Plan
+
+### 1. Introduction
+* Dominance of internal combustion engines (over 90% of cars).
+* Problem of high emissions from old vehicles.
+* **Thesis:** Electric cars are the future for a cleaner world.
+
+### 2. Economic and Energy Factor
+* **Fact 1:** Electricity for driving is cheaper than gasoline.
+* **Fact 2:** Producing that electricity still requires a lot of energy.
+* **Conclusion:** Electric cars save money, but we need cleaner energy sources.
+
+### 3. Manufacturing Impact
+* **Fact 1:** Building electric car batteries uses a massive amount of energy.
+* **Fact 2:** Electric cars have zero tailpipe emissions while driving.
+* **Conclusion:** The clean air in cities justifies the high production costs.
+
+### 4. Natural Resources
+* **Fact 1:** Traditional cars are quickly depleting the world's oil reserves.
+* **Fact 2:** Electric cars require mining for lithium and other metals.
+* **Conclusion:** We must use resources wisely and improve battery recycling.
+
+### 5. Conclusion
+* Summary of emissions and technology benefits.
+* Reiteration that electric cars are a vital tool.
+* Final thought on protecting nature for the future.
+"""
+
+# Сохранение файла
+file_path = "essay_electric_cars_github.md"
+with open(file_path, "w", encoding="utf-8") as f:
+    f.write(md_content)
